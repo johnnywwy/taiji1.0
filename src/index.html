@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,
+        minimum-scale=1,maximum-scale=1,user-scalable=no,
+        viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>会动的太极</title>
+
+</head>
+
+<body>
+    <style id="style"></style>
+    <div id="html"></div>
+    <div id="divWrapper">
+        <div id="div1"></div>
+    </div>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        #html {
+            word-break: break-all
+        }
+
+        #div1 {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+
+        }
+
+        #div1::before {
+            content: '';
+            display: block;
+            position: absolute;
+        }
+
+        #div1::after {
+            content: '';
+            display: block;
+            position: absolute;
+        }
+
+        @media (max-width:500px) {
+            #html {
+                padding: 0 10px 0 10px;
+                height: 60vh;
+                overflow: auto;
+            }
+
+            #divWrapper {
+                /* height: 50vh; */
+                margin: 20px;
+            }
+
+            #div1 {
+                position: relative;
+                bottom: 0;
+                left: 50%;
+                transform: translate(-50%);
+            }
+        }
+    </style>
+    <script src="main.js"></script>
+</body>
+
+</html>
